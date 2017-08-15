@@ -36,6 +36,8 @@ import { ModifyCodeComponent } from '../app/components/modify-code/modify-code.c
 import { OrdersListComponent } from '../app/components/orders-list/orders-list.component';
 import { InvoiceListComponent } from '../app/components/invoice-list/invoice-list.component';
 import { InvoiceInfoComponent } from '../app/components/invoice-info/invoice-info.component';
+import { ChargeComponent } from '../app/components/charge/charge.component';
+import { ChargeListComponent } from '../app/components/charge-list/charge-list.component';
 //
 // 配置路由
 //
@@ -86,7 +88,9 @@ const appRoutes: Routes = [
     ModifyCodeComponent,
     OrdersListComponent,
     InvoiceListComponent,
-    InvoiceInfoComponent
+    InvoiceInfoComponent,
+    ChargeComponent,
+    ChargeListComponent
   ],
   imports: [
     BrowserModule,
