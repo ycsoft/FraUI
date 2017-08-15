@@ -1,0 +1,46 @@
+@import "../../../constants";
+
+.title{
+  font-size: 18px;
+  color: #000e3f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.tips{
+  color: #676f8b;
+  margin: 30px 20px;
+}
+.container{
+  position: relative;
+  .row{
+    position: relative;
+  }
+}
+
+.col-md-1 {
+  margin: 15px 0px;
+}
+
+.money_select{
+  position: relative;
+  margin: 10px 10px;
+  height: 80px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background-color: #f8f9fc;
+  text-align: center;
+  line-height: 80px;
+  &:hover{
+    color: #FFFFFF;
+    background-color: #0036fc;
+  }
+}
+.money_other{
+  @extend .money_select;
+}
+.pay{
+  position: relative;
+  top: 50px;
+  text-align: center;
+}

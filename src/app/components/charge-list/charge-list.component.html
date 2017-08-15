@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 title">充值记录</div>
+  </div>
+  <div class="row title-tip">
+    <div class="col-md-4">充值单号</div>
+    <div class="col-md-2">充值方式</div>
+    <div class="col-md-2">时间</div>
+    <div class="col-md-2">金额</div>
+    <div class="col-md-2">状态</div>
+  </div>
+  <div class="row" *ngFor="let i of charge_list">
+    <div class="col-md-4 item">123132132</div>
+    <div class="col-md-2 item">支付宝</div>
+    <div class="col-md-2 item">2017-08-15</div>
+    <div class="col-md-2 item">￥8200</div>
+    <div class="col-md-2 item" [ngClass]="{'charge_ok': charge_ok, 'charge_fail': !charge_ok}">充值成功</div>
+  </div>
+
+</div>

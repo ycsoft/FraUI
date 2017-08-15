@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 title">充值</div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 tips">充值金额</div>
+  </div>
+  <div class="container-fluid row">
+    <div class="col-md-3 money_select">2000</div>
+    <div class="col-md-3 money_select">5000</div>
+    <div class="col-md-3 money_select">8000</div>
+    <div class="col-md-3 money_select">10000</div>
+    <div class="col-md-3 money_other">其他金额</div>
+  </div>
+  <div class="row">
+    <div class="tips">支付方式</div>
+  </div>
+  <div class="container-fluid row">
+  <div class="col-md-3"><app-radio [isChecked]="pay_type === pay_types.PAY_ALI" (onChange)="pay_type = pay_types.PAY_ALI"></app-radio><img src="../../../assets/images/img_alipay-8(08-10-17-52-53).png"></div>
+    <div class="col-md-3"><app-radio [isChecked]="pay_type === pay_types.PAY_UNION" (onChange)="pay_type = pay_types.PAY_UNION"></app-radio><img src="../../../assets/images/img_unionpay-8.png"></div>
+    <div class="col-md-3"><app-radio [isChecked]="pay_type === pay_types.PAY_REMIT" (onChange)="pay_type = pay_types.PAY_REMIT"></app-radio><img src="../../../assets/images/img_reimitance-8.png"></div>
+  </div>
+  <app-pay-pop [hidden]="!(pay_type === pay_types.PAY_REMIT)" [pay_type]="pay_types.PAY_REMIT"></app-pay-pop>
+  <div class="row pay">
+    <button class="btn btn-red">支付</button>
+  </div>
+</div>
