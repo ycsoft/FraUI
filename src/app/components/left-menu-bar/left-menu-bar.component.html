@@ -24,8 +24,8 @@
         基本资料
       </li>
       <ul [collapse] = "basic_info" class="list-group">
-        <div class="list-group-item">基本信息</div>
-        <div class="list-group-item">修改密码</div>
+        <div class="list-group-item" (click)="subMenuClick(0)" >基本信息</div>
+        <div class="list-group-item" (click)="subMenuClick(1)">修改密码</div>
       </ul>
       <!----->
       <li class="list-group-item" (click)="order_report_click()">
@@ -33,9 +33,9 @@
         订单报告
       </li>
       <ul [collapse] = "order_report" class="list-group">
-        <li class="list-group-item">已完成</li>
-        <li class="list-group-item">待支付</li>
-        <li class="list-group-item">待审核</li>
+        <li class="list-group-item" (click)="subMenuClick(2)">已完成</li>
+        <li class="list-group-item" (click)="subMenuClick(3)" >待支付</li>
+        <li class="list-group-item" (click)="subMenuClick(4)">待审核</li>
       </ul>
       <!---->
       <li class="list-group-item" (click)="invoice_mana_click()">
@@ -43,8 +43,8 @@
         发票管理
       </li>
       <ul [collapse] = "invoice_mana" class="list-group">
-        <li class="list-group-item">开票管理</li>
-        <li class="list-group-item">发票信息管理</li>
+        <li class="list-group-item" (click)="subMenuClick(5)">开票管理</li>
+        <li class="list-group-item" (click)="subMenuClick(6)">发票信息管理</li>
       </ul>
       <!---->
       <li class="list-group-item" (click)="account_mana_click()">
@@ -52,8 +52,8 @@
         账户管理
       </li>
       <div [collapse] = "account_mana" class="list-group">
-        <div class="list-group-item">充值</div>
-        <div class="list-group-item">充值记录</div>
+        <div class="list-group-item"  (click)="subMenuClick(7)">充值</div>
+        <div class="list-group-item"  (click)="subMenuClick(8)">充值记录</div>
       </div>
     </ul>
   </div>

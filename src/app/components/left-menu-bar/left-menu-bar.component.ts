@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'app-left-menu-bar',
@@ -11,11 +11,12 @@ export class LeftMenuBarComponent implements OnInit {
   order_report = true;
   invoice_mana = true;
   account_mana = true;
-  constructor() { }
 
+  @Input()  menuId = -1;
+  @Output() menuClick = new EventEmitter();
+  constructor() { }
   ngOnInit() {
   }
-
   //
   // 菜单单击展开与伸缩的控制
   //
@@ -31,5 +32,11 @@ export class LeftMenuBarComponent implements OnInit {
   account_mana_click() {
     this.account_mana = ! this.account_mana;
   }
-
+  //
+  // 子菜单单击事件
+  //
+  subMenuClick(id) {
+    console.log(id);
+    this.menuClick.emit(id);
+  }
 }
