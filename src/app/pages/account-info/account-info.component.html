@@ -1,0 +1,9 @@
+<app-title-bar></app-title-bar>
+<app-left-menu-bar></app-left-menu-bar>
+<div class="right_content">
+<app-basic-info [hidden] = "!show_info"></app-basic-info>
+  <app-modify-code [hidden]="!show_modify"></app-modify-code>
+  <app-orders-list [hidden]="!show_orders_complete"></app-orders-list>
+  <app-invoice-list [hidden]="!show_invoice"></app-invoice-list>
+  <app-invoice-info [hidden]="!show_invoice_info"></app-invoice-info>
+</div>

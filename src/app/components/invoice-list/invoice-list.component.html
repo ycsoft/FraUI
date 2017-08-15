@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 title">开票列表</div>
+  </div>
+  <div class="row basic">
+    <div class="col-md-2 tips">开票金额</div>
+    <div class="col-md-3 money">￥7200</div>
+    <div class="col-md-3">
+      <button class="btn-blue btn">申请发票</button>
+    </div>
+  </div>
+  <div class="row filter">
+    <div class="col-md-2"><input type="text" placeholder="起始日期" (click)="start_click()"></div>
+    <div class="col-md-2"><input type="text" placeholder="截止日期" (click)="end_click()"></div>
+    <button class="col-md-1 btn btn-blue">筛选</button>
+  </div>
+  <div class="date-start" [hidden]="!show_start">
+    <datepicker></datepicker>
+  </div>
+  <div class="date-end" [hidden]="!show_end">
+    <datepicker></datepicker>
+  </div>
+  <div class="item-list">
+    <div class="row list-title">
+      <div class="col-md-6">开票列表</div>
+      <div class="col-md-3">时间</div>
+      <div class="col-md-3">金额</div>
+    </div>
+    <div class="row listitem" *ngFor="let i of invo_list">
+      <div class="col-md-1"><app-check></app-check></div>
+      <div class="col-md-5 item">123456</div>
+      <div class="col-md-3 item">2017-07-01</div>
+      <div class="col-md-3 item">1800</div>
+    </div>
+  </div>
+</div>

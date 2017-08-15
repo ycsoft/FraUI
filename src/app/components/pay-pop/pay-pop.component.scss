@@ -1,0 +1,112 @@
+$pay_back_color: #f8f9fc;
+.container{
+  position: relative;
+  background-color: #f8f9fc;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $pay_back_color;
+  width: 100%;
+  min-height: 200px;
+  bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px #676f8b;
+  .remain{
+    .control-label{
+      margin-left: 20px;
+      font-size: 18px;
+      color: #ff2600;
+    }
+    .not-enough{
+      margin-top: 20px;
+      color: #ff2600;
+      span{
+        color: #676f8b;
+        margin-left: 20px;
+        font-size: 14px;
+      }
+    }
+    button{
+      width: 70px;
+      height: 26px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  }
+  .remit{
+    position: relative;
+    margin-top: 10px;
+    min-height: 200px;
+    max-height: 700px;
+    height: 400px;
+    .row{
+      margin: 20px 0px;
+      .title{
+        font-size: 14px;
+        color: #000e3f;
+      }
+    }
+    .line{
+      border-top: 1px dashed #ccc;
+    }
+    .info-title{
+      top: 10px;
+      font-size: 14px;
+      color: #000e3f;
+      span{
+        font-size: 13px;
+        color: #b3b7c6;
+        margin-left: 10px;
+      }
+    }
+  }
+  .pay_info{
+    margin-top: 50px;
+    input{
+      position: relative;
+      width: 380px;
+      height: 40px;
+      border-radius: 20px;
+      border-width: 1px;
+      border-color: #b3b7c6;
+    }
+    button{
+      width: 120px;
+    }
+    span{
+      font-size: 13px;
+      color: #b3b7c6;
+    }
+    .left{
+      text-align: left;
+    }
+  }
+  .pay_title{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #676f8b;
+  }
+  .pay_footer{
+    font-size: 13px;
+    color: #676f8b;
+  }
+}
+.arrow {
+  position: absolute;
+  width:0;
+  height:0;
+  font-size:0;
+  border:solid 10px;
+  border-color:#FFFFFF #FFFFFF $pay_back_color #FFFFFF;
+  bottom: 199px;
+  left: 80px;
+}
+.arrow2 {
+  position: absolute;
+  width:0;
+  height:0;
+  font-size:0;
+  border:solid 10px;
+  border-color:#FFFFFF #FFFFFF $pay_back_color #FFFFFF;
+  bottom: 421px;
+  left: 990px;
+}

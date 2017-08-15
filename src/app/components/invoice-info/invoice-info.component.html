@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 title">发票信息管理</div>
+  </div>
+  <div class="row basic">
+    <div class="col-md-1">发票信息</div>
+    <div class="col-md-2 tips">(增值税发票)</div>
+  </div>
+  <div class="container-fluid row">
+    <div class="panel-body col-md-3" *ngFor="let i of info_list">
+      <h1 style="text-align: center">XXXX有限公司</h1>
+      <div class="bottom"><app-radio>设为默认</app-radio></div>
+    </div>
+    <div class="panel-body col-md-3">
+      <img src="../../../assets/images/icon_add.svg">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+@import "../../../constants";
+
+.title{
+  font-size: 18px;
+  color: #000e3f;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.container{
+  position: relative;
+  width: 80%;
+  height: 100%;
+  left: 100px;
+  .row{
+    position: relative;
+  }
+}
+
+.col-md-1 {
+  margin: 15px 0px;
+}
+
+button{
+  float: left;
+  margin-top: 6px;
+}
+.row{
+  .tips{
+    margin-top: 13px;
+    font-size: 13px;
+    color: #676f8b;
+  }
+  .money{
+    font-size: 30px;
+    color: #ff0000;
+  }
+}
+.basic{
+  margin-top: 40px;
+  background-color: #b3b7c6;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding-top: 50px;
+}
+.filter{
+  margin-top: 60px;
+  input{
+    height: 40px;
+    border-width: 1px;
+    border-radius: 20px;
+    padding-left: 20px;
+  }
+  button{
+    position: relative;
+    bottom: 10px;
+  }
+}
+.date-start{
+  position: absolute;
+  left: -60px;
+  z-index: 2;
+}
+.date-end{
+  position: absolute;
+  left: 130px;
+  z-index: 2;
+}
+.item-list{
+  position: relative;
+  margin-top: 20px;
+  .list-title{
+    font-size: 13px;
+    color: #b3b7c6;
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 10px;
+  }
+  .item{
+    margin-top: 20px;
+  }
+  .listitem{
+    border-bottom-style: dashed;
+    border-width: 1px;
+    border-color: #b3b7c6;
+    div{
+      padding-top: 20px;
+      height: 70px;
+    }
+  }
+}

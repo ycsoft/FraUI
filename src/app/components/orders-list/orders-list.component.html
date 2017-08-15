@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 title">已完成订单</div>
+  </div>
+  <div class="row oper">
+    <div class="col-md-1"><app-check>全选</app-check></div>
+    <div class="col-md-2"><input [(ngModel)]="dt_start" type="text" placeholder="起始日期" (click)="start_click()"></div>
+    <div class="col-md-2"><input [(ngModel)]="dt_end" type="text" placeholder="截止日期" (click)="end_select()"></div>
+    <div class="col-md-4"><button class="btn btn-blue">筛选</button></div>
+    <div class="col-md-1"><button class="btn btn-blue" style="position: relative;">下载报告</button></div>
+  </div>
+  <div class="datepicker">
+    <div class="col-md-2 start"><datepicker [hidden]="!select_start" [(ngModel)]="dt_start" [dateDisabled]="dateDisabled"></datepicker></div>
+    <div class="col-md-2 end"><datepicker [hidden]="!select_end" [(ngModel)]="dt_end"></datepicker></div>
+  </div>
+
+  <div class="container orderlist row"><!--list start-->
+    <div *ngFor="let item of items" class="panel panel-default">
+      <div class="panel-heading">订单号，订单日期</div>
+      <div class="panel-body row">
+        <div class="col-md-2">关键词</div>
+        <div class="col-lg-3">
+          <ul class="list-group">
+            <li class="list-group-item">维度1</li>
+            <li class="list-group-item">维度2</li>
+            <li class="list-group-item">维度3</li>
+          </ul>
+        </div>
+        <div class="col-md-4 money">9000</div>
+        <div class="col-md-2 download">
+          <img src="../../../assets/images/btn_checkreport.svg">
+          <img src="../../../assets/images/btn_download.svg">
+        </div>
+      </div>
+    </div>
+  </div><!--list end-->
+</div>

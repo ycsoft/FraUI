@@ -1,0 +1,44 @@
+:host {
+    font-family: "Consolas", "Microsoft YaHei", Arial, arial, sans-serif;
+    overflow: hidden;
+  display: inline-block;
+}
+
+:host > div > span{
+    padding-left: 10px;
+}
+:host > div > div {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('../../../assets/images/order_checkcircle_nor.png') no-repeat;
+    cursor: pointer;
+}
+
+:host > div > div:hover {
+    background: url('../../../assets/images/order_checkcircle_hover_red.png') no-repeat;
+}
+
+:host.blue > div > div:hover {
+    background: url('../../../assets/images/order_checkcircle_hover_blue.png') no-repeat;
+}
+
+:host > div > div.disabled {
+    background: url('../../../assets/images/order_checkcircle_nor_disabled.png') no-repeat;
+    cursor: default;
+}
+
+:host > div > div.checked {
+    background: url('../../../assets/images/order_checkcircle_active_red.png') no-repeat;
+}
+
+:host.blue > div > div.checked {
+    background: url('../../../assets/images/order_checkcircle_active_blue.png') no-repeat;
+}
+
+:host .label {
+    display: inline-block;
+    vertical-align: middle;
+}

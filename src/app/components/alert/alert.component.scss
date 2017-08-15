@@ -1,0 +1,12 @@
+.calert{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    .alert{
+        width: 60%;
+        margin: auto;
+        border-radius: 0;
+    }
+}

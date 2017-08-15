@@ -1,0 +1,73 @@
+<div class="beforelogin">
+<ol class="breadcrumb">
+  <li role="presentation" class="dropdown alone"><img src="../../assets/images/icon_help_dark.svg">
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">帮助</a>
+    <ul class="dropdown-menu">
+      <li class="center-block"><a href="#">Q&A</a></li>
+      <li class="center-block"><a href="#">客服电话</a></li>
+    </ul>
+  </li>
+  <li *ngIf="!isLogin">
+    <a data-toggle="modal" data-target="#loginModal" href="#" (click)="onLogin()">登录</a>
+  </li>
+  <li *ngIf="!isLogin"><a data-toggle="modal" data-target="#regModal" href="#">注册</a></li>
+  <li *ngIf="isLogin" role="presentation" class="dropdown">
+    <a id="baseinfo" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名</a>
+    <ul class="dropdown-menu" aria-labelledby="baseinfo">
+      <li class="center-block"><a href="#">基本资料</a></li>
+      <li class="center-block"><a href="#">发票管理</a></li>
+    </ul>
+  </li>
+</ol>
+</div>
+<!-- 登录 -->
+<div class="modal fade loginModal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员登录</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="账号">
+        <input class="center-block" type="password" placeholder="密码">
+        <div class="forget center-block">忘记密码</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
+        <div class="center-block regnew">新用户注册</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 注册 -->
+<div class="modal fade loginModal" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员注册</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="请输入用户名">
+        <input class="center-block" type="password" placeholder="请输入密码">
+        <input class="center-block" type="password" placeholder="请输入您的邮箱">
+        <div class="center-block agree">
+          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码">
+          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
+            <img id="vcode" src="http://10.200.187.131:7001/vcode">
+          </div>
+        </div>
+        <div class="center-block agree"><input type="checkbox" style="width: 20px; display: inline-block; margin-right: 10px">
+          <label>我已阅读并接受协议</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-reg center-block" data-dismiss="modal">注册</button>
+        <div class="center-block reg-login">登录</div>
+      </div>
+    </div>
+  </div>
+</div>

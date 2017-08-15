@@ -1,0 +1,39 @@
+:host {
+    font-family: "Consolas", "Microsoft YaHei", Arial, arial, sans-serif;
+    overflow: hidden;
+}
+
+:host > div > div {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('../../../assets/images/order_radiobox_nor.png') no-repeat;
+    cursor: pointer;
+}
+
+:host > div > div:hover {
+    background: url('../../../assets/images/order_radiobox_hover_red.png') no-repeat;
+}
+
+:host.blue > div > div:hover {
+    background: url('../../../assets/images/order_radiobox_hover_blue.png') no-repeat;
+}
+
+:host > div > div.disabled {
+    background: url('../../../assets/images/order_radiobox_nor_disabled.png') no-repeat;
+    cursor: default;
+}
+
+:host > div > div.checked {
+    background: url('../../../assets/images/order_radiobox_active_red.png') no-repeat;
+}
+
+:host.blue > div > div.checked {
+    background: url('../../../assets/images/order_radiobox_active_blue.png') no-repeat;
+}
+
+:host .label {
+    display: inline-block;
+    vertical-align: middle;
+}

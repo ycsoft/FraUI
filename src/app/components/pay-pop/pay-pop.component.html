@@ -1,0 +1,40 @@
+<div class="container" *ngIf="pay_type === payType.PAY_REMAIN || pay_type === payType.PAY_REMIT">
+  <div class="remain" *ngIf="pay_type === payType.PAY_REMAIN">
+    <div class="arrow"></div>
+    <div>账户余额:<label class="control-label">￥2300</label></div>
+    <div class="not-enough">账户余额不足，无法支付！<span>请充值后继续支付或选择其他支付方式</span></div>
+    <button class="btn btn-blue">充值</button>
+  </div>
+  <div class="remit" *ngIf="pay_type === payType.PAY_REMIT">
+    <div class="arrow2"></div>
+    <div class="row">
+      <div class="col-md-4">开户银行</div>
+      <div class="col-md-4">账号名称</div>
+      <div class="col-md-4">账户</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 title">交通银行股份有限公司上海黄浦支行</div>
+      <div class="col-md-4 title">华院数据技术（上海）有限公司</div>
+      <div class="col-md-4 title">310066713018002037062</div>
+    </div>
+    <div class="row line"></div>
+    <div class="row">
+      <div class="info-title col-md-12">请填写转账信息<span>（汇款成功后，请填写以下信息，以便于汇款及时通过审核！）</span></div>
+    </div>
+    <div class="pay_info">
+      <div class="row">
+        <div class="col-md-1 pay_title">付款单位</div><div class="col-md-3 left"><input type="text"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1 pay_title">付款金额</div><div class="col-md-3 left"><input type="text"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1 pay_title">付款凭证</div><div class="col-md-6 left"><button class="btn btn-default">上次图片</button>
+        <span>（注：仅支持jpg, png, gif, bmp的文件格式，文件大小不超过4M）</span></div>
+      </div>
+      <div class="row pay_footer">
+        <div class="col-md-8">如果您需要开发票，请在发票管理页面自助申请，感谢配合！</div>
+      </div>
+    </div>
+  </div>
+</div>

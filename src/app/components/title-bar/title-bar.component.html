@@ -1,0 +1,76 @@
+<div class="search-bar row">
+  <!--div class="leftheader"-->
+    <div class="logo col-md-1">
+    <img class="center-block" src="../../../assets/images/nav_logo.svg" (click)="backHome()">
+    </div>
+    <div class="menu_fold col-md-1">
+      <img src="../../../assets/images/btn_menuunfold.svg" (click)="fold_unfold()" id="fold">
+    </div>
+  <!--/div-->
+  <div class="search-container col-md-3">
+    <img src="../../../assets/images/btn_search_white.svg" class="search_img" (click)="search()">
+    <div class="search-input">
+      <input type="text" placeholder="请输入您需要查询的特征" [(ngModel)]="keywords" (keypress)="keypress($event)">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <ol class="breadcrumb headerright">
+      <li role="presentation"><img src="../../../assets/images/icon_about.svg"><a href="#" style="margin-right: 60px">关于分维</a></li>
+      <li role="presentation"><img src="../../../assets/images/icon_help.svg"><a href="#" style="margin-right: 80px">帮助</a></li>
+      <li role="presentation"><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+      <li role="presentation"><a href="" style="margin: 0px 10px">|</a></li>
+      <li role="presentation"><a href="#" data-toggle="modal" data-target="#regModal">注册</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 登录 -->
+<div class="modal fade loginModal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员登录</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="账号">
+        <input class="center-block" type="password" placeholder="密码">
+        <div class="forget center-block">忘记密码</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
+        <div class="center-block regnew">新用户注册</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 注册 -->
+<div class="modal fade loginModal" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员注册</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="请输入用户名">
+        <input class="center-block" type="password" placeholder="请输入密码">
+        <input class="center-block" type="password" placeholder="请输入您的邮箱">
+        <div class="center-block agree">
+          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码">
+          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
+            <img id="vcode" src="http://10.200.187.131:7001/vcode">
+          </div>
+        </div>
+        <div class="center-block agree"><input type="checkbox" style="width: 20px; display: inline-block; margin-right: 10px">
+          <label>我已阅读并接受协议</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-reg center-block" data-dismiss="modal">注册</button>
+        <div class="center-block reg-login">登录</div>
+      </div>
+    </div>
+  </div>

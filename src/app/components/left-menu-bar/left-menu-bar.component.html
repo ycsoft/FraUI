@@ -1,0 +1,63 @@
+<div class="leftbar">
+  <div class="center-block user-head row">
+  <div class="user col-md-5">
+  <img src="../../assets/images/icon_userimage.svg">
+  </div>
+  <div>
+    <label class="company">普树</label><br>
+    <label class="company-desc">普树咖啡</label><br>
+  </div>
+</div>
+  <div class="center-block money-left">
+    <div class="money-img row center-block">
+    <div class="col-md-2"></div><img src="../../assets/images/icon_wallet.svg" class="col-md-3"><div class="col-md-6">账户余额</div>
+    </div>
+    <div class="money center-block">
+      ￥8500
+    </div>
+    <button class="btn btn-blue center-block">充值</button>
+  </div>
+  <div class="menu">
+    <ul class="list-group">
+      <li class="list-group-item" (click)="basic_click()">
+       <img src="../../assets/images/icon_account_basicinfo_blue.svg">
+        基本资料
+      </li>
+      <ul [collapse] = "basic_info" class="list-group">
+        <div class="list-group-item">基本信息</div>
+        <div class="list-group-item">修改密码</div>
+      </ul>
+      <!----->
+      <li class="list-group-item" (click)="order_report_click()">
+        <img src="../../assets/images/icon_sidemenu_report.svg">
+        订单报告
+      </li>
+      <ul [collapse] = "order_report" class="list-group">
+        <li class="list-group-item">已完成</li>
+        <li class="list-group-item">待支付</li>
+        <li class="list-group-item">待审核</li>
+      </ul>
+      <!---->
+      <li class="list-group-item" (click)="invoice_mana_click()">
+        <img src="../../assets/images/icon_sidemenu_invoice.svg">
+        发票管理
+      </li>
+      <ul [collapse] = "invoice_mana" class="list-group">
+        <li class="list-group-item">开票管理</li>
+        <li class="list-group-item">发票信息管理</li>
+      </ul>
+      <!---->
+      <li class="list-group-item" (click)="account_mana_click()">
+        <img src="../../assets/images/icon_sidemenu_account.svg">
+        账户管理
+      </li>
+      <div [collapse] = "account_mana" class="list-group">
+        <div class="list-group-item">充值</div>
+        <div class="list-group-item">充值记录</div>
+      </div>
+    </ul>
+  </div>
+  <div class="exit center-block">
+    <button class="btn btn-block">退出</button>
+  </div>
+</div>

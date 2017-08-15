@@ -1,0 +1,80 @@
+<app-title-bar></app-title-bar>
+<div class="main-container">
+    <div class="result-container">
+        <div class="result-container1">
+            <div class="result-container2">
+                <div class="order-info">
+                    <div class="title">
+                        <span>订单信息</span>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <div echarts [options]="chartOption" class="main-chart"></div>
+                        </div>
+                        <div class="content-right">
+                            <div *ngFor="let item of chartlist">
+                                <div class="item" *ngIf="item.contentList.length>0">
+                                    <div echarts [options]="item.chartOption" class="main-chart item-left"></div>
+                                    <div class="item-right">
+                                        <div class="line1">
+                                            <h1>{{item.chartBean.small}}<span>（共{{item.contentList.length}}条特征<span *ngIf="item.hasFree">，减免1条</span>）</span>
+                                            </h1>
+                                            <span class="price"><span [ngClass]="{'price-free':item.hasFree}" *ngIf="item.hasFree">{{item.totalPrice | rmb}}</span>{{item.discountPrice | rmb}}</span>
+                                        </div>
+                                        <div class="line2">购买以查看详细策略</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item total">
+                                <span>总价：<span class="price">{{totalMoney | rmb}}</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="address-info" [hidden]="showAddr">
+                    <div class="title">
+                        <span>收货信息</span>
+                    </div>
+                    <form class="content" #orderForm="ngForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="电子邮件" [(ngModel)]="order.email" name="email"> <!--去除appEmail required-->
+                            <label [hidden]="order.errors.email" class="tip"><span style="color:red;">*会员无需填写 (购买成功后我们将会发送报告至您的邮箱)</span></label>
+                            <label [hidden]="!order.errors.email" class="tip"><span style="color:red;">*必填项：请填写正确的邮箱</span></label>
+                        </div>
+                    </form>
+                </div>
+                <div class="pay-way" [hidden]="showEmail">
+                    <div class="title">
+                        <span>支付方式</span>
+                    </div>
+                    <div class="content row">
+                        <div class="pay-way-img col-md-1">
+                          <app-radio class="radio" [isChecked]="pay_type === pay_types.PAY_REMAIN" (onChange)="pay_type = pay_types.PAY_REMAIN"></app-radio>
+                            <img src="../assets/images/img_remaining-8.png">
+                        </div>
+                        <div class="pay-way-img col-md-1">
+                          <app-radio class="radio" [isChecked]="pay_type === pay_types.PAY_ALI" (onChange)="pay_type = pay_types.PAY_ALI"></app-radio>
+                            <img src="../assets/images/img_alipay-8(08-10-17-52-53).png">
+                        </div>
+                      <div class="pay-way-img col-md-1">
+                        <app-radio  class="radio" [isChecked]="pay_type === pay_types.PAY_UNION" (onChange)="pay_type = pay_types.PAY_UNION"></app-radio>
+                        <img src="../assets/images/img_unionpay-8.png">
+                      </div>
+                      <div class="pay-way-img col-md-1">
+                        <app-radio class="radio" [isChecked]="pay_type === pay_types.PAY_REMIT" (onChange)="pay_type = pay_types.PAY_REMIT"></app-radio>
+                        <img src="../assets/images/img_reimitance-8.png">
+                      </div>
+                    </div>
+                  <app-pay-pop [pay_type]="pay_type"></app-pay-pop>
+                </div>
+            </div>
+          <div class="footer">
+                <div>
+                    <button type="button" class="btn btn-red" (click)="submitOrder()" >付&nbsp;&nbsp;&nbsp;&nbsp;款</button>
+                </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+

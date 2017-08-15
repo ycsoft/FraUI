@@ -1,0 +1,21 @@
+<!--产品首页-->
+<!--Author: Xiaodong Yang-->
+<app-before-login></app-before-login>
+<div class="home">
+  <div class="logo">
+    <img src="../../../assets/images/logo.svg">
+  </div>
+  <div class="home-search">
+    <div class="search-box">
+      <input id="search" type="text" placeholder="爱吃零食 早起 拖延症 关注健康 淘宝控" [(ngModel)]="keywords" (keypress)="keypress($event)">
+      <img src="../../../assets/images/top_search.svg" (click)="search()">
+    </div>
+  </div>
+  <div class="container show-grid">
+    <div class="col-md-2 icon"><img src="../../../assets/images/icon_principle.svg"><br><br>Fra原理</div>
+    <div class="col-md-2 icon"><img src="../../../assets/images/icon_solution.svg"><br><br>解决问题</div>
+    <div class="col-md-2 icon"><img src="../../../assets/images/icon_advantage.svg"><br><br>Fra优势</div>
+    <div class="col-md-2 icon"><img src="../../../assets/images/icon_team.svg"><br><br>Fra团队</div>
+    <div class="col-md-2 icon"><img src="../../../assets/images/icon_application.svg"><br><br>Fra应用</div>
+  </div>
+</div>

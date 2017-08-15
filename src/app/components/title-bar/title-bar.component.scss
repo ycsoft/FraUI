@@ -1,0 +1,240 @@
+.search-bar{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  margin: 0px;
+  background-color: #0036fc;
+  z-index: 1;
+  //.leftheader{
+  //  display: inline-flex;
+  //  position: relative;
+  //  height: 100%;
+    .logo{
+      position: relative;
+      min-width: 100px;
+      // background-color: #6b9bfc;
+      margin-right: 10px;
+      img{
+        position: relative;
+        width: 30px;
+        cursor: pointer;
+        top: 7px;
+        &:hover{
+          transform: scale(1.2);
+        }
+      }
+    }
+    .menu_fold{
+      position: relative;
+      @extend .logo;
+      img{
+        top: 15px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  //}
+  span{
+    position: absolute;
+    right: 50px;
+    top: 15px;
+    cursor: pointer;
+  }
+  label {
+    color: #f00;
+    cursor: pointer;
+  }
+  .search-container{
+    height: 50px;
+    position: relative;
+    display: inline-flex;
+    &:hover{
+      background-color: #0036cd;
+    }
+    .search_img{
+      position: relative;
+      width: 30px;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.5);
+      }
+    }
+    .search-input{
+      height: 100%;
+      width: 90%;
+      padding-left: 20px;
+      input{
+        position: relative;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        font-size: 15px;
+        color: #999999;
+        line-height: 50px;
+      }
+      .search-img{
+        padding-right: 20px;
+        cursor: pointer;
+        height: 30px;
+        width: 50px;
+        line-height: 50px;
+        img{
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .breadcrumb{
+    > li {
+      display: inline-block;
+
+      + li:before {
+        content: "";
+      }
+    }
+  }
+  .headerright{
+    position: relative;
+    top: 10px;
+    left: 140px;
+    text-align: right;
+    background-color: #0036fc;
+    a{
+      color: #FFFFFF;
+    }
+    li{
+      img{
+        position: relative;
+        width: 20px;
+        margin-right: 10px;
+        bottom: 3px;
+        &:hover{
+          -webkit-transform: scale(1.5);
+          -moz-transform: scale(1.5);
+          -ms-transform: scale(1.5);
+          -o-transform: scale(1.5);
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}
+
+.loginModal{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background-color: rgba(0,0,0,0.7);
+  .modal-dialog{
+    position: relative;
+    top: 100px;
+    background-color: #FFFFFF;
+    width: 435px;
+    height: 560px;
+    border-radius: 12px;
+    .modal-content{
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border-style: none;
+    }
+    .modal-header{
+      img{
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .title{
+        width: 100%;
+        font-size: 18px;
+        color: #000e3f;
+        text-align: center;
+        margin: 40px 0px;
+        font-weight: bold;
+      }
+    }
+    .modal-body{
+      box-shadow: none;
+      label{
+        position: relative;
+        bottom: 15px;
+      }
+      input{
+        width: 300px;
+        height: 40px;
+        border-radius: 20px;
+        display: block;
+        border-width: 1px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        font-size: 14px;
+      }
+      .agree{
+        width: 300px;
+        label{
+          cursor: pointer;
+          font-weight: normal;
+          color: #676f8b;
+          &:hover{
+            color: #000e3f;
+            font-size: 16px;
+          }
+        }
+        .code{
+          position: relative;
+          display: inline-block;
+          height: 40px;
+          width: 100px;
+          margin-left: 20px;
+          background-color: #888888;
+          line-height: 40px;
+          float: right;
+          cursor: pointer;
+          img{
+            width: 100px;
+          }
+        }
+      }
+      .forget{
+        width: 300px;
+        text-align: right;
+        font-size: 13px;
+        color: #676f8b;
+      }
+    }
+    .modal-footer{
+      .btn-login{
+        position: relative;
+        top: 50px;
+        width: 320px;
+        height: 40px;
+        font-size: 14px;
+        background-color: #0003bf;
+        border-radius: 20px;
+        color: #FFFFFF;
+        &:hover{
+          background-color: #e7edff;
+          color: #676f8b;
+        }
+      }
+      .btn-reg{
+        @extend .btn-login;
+        top: -20px;
+      }
+      .regnew{
+        position: relative;
+        top: 80px;
+        width: 320px;
+        text-align: center;
+        font-size: 13px;
+        color: #0003bf;
+      }
+      .reg-login{
+        @extend .regnew;
+        top: 0px;
+      }
+    }
+  }
+}

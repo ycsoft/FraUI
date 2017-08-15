@@ -1,0 +1,163 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+
+/* You can add global styles to this file, and also import other style files */
+/*
+ * Globals
+ */
+
+/* Sticky footer styles
+-------------------------------------------------- */
+@import '_constants.scss';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  font-family: 'Microsoft YaHei', 'CenturyGothic', "Helvetica Neue",Helvetica,Arial,sans-serif;
+  overflow: hidden;
+}
+
+.main-container{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 70px;
+}
+
+h1{font-size: $ft-title; color: #333333;}
+
+h2{font-size: $ft-title-s; color: #333333;}
+
+.t_text{font-size: $ft-content; color: #666666;}
+
+.t_sup_text{font-size: $ft-tip; color: #999999;}
+
+.t_indent{text-indent:2em;}
+
+.t_red{
+  color:#ff2600;
+}
+
+.t_blue{
+  color: #0036fc;
+}
+
+.pagination{
+  .page-item{
+    >a{
+      border: none;
+    }
+  }
+}
+
+.btn-red{
+  background-color: #ff2600;
+  color: white;
+  width: 130px;
+  height: 45px;
+  border-radius: 30px;
+  outline: 0;
+}
+
+.btn-red:hover{
+  color: white !important;
+  background: #fc7c72;
+}
+
+.btn-red:focus, .btn-red:active{
+  color: white !important;
+  outline: 0;
+}
+
+.btn{
+  border-radius: 30px;
+}
+
+.btn-blue{
+  background-color: #0036fc;
+  color: white;
+  width: 90px;
+  height: 30px;
+
+  outline: 0;
+  padding: 0;
+}
+
+.btn-blue:hover{
+  color: white !important;
+  background-color: #6b9bfc;
+}
+
+.btn-blue:focus, .btn-blue:active{
+  color: white !important;
+  outline: 0;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #999999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999999;
+}
+
+.open > .dropdown-menu {
+  display: block;
+}
+
+body::-webkit-scrollbar, .content::-webkit-scrollbar, .result-container1::-webkit-scrollbar, .content-right::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track, .content::-webkit-scrollbar-trac, .result-container1::-webkit-scrollbar-trac,.content-right::-webkit-scrollbar-trac {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+body::-webkit-scrollbar-thumb, .content::-webkit-scrollbar-thumb, .result-container1::-webkit-scrollbar-thumb, .content-right::-webkit-scrollbar-thumb {
+  background-color: #0036fc;
+  outline: 1px solid #333; }
+
+// .ng-valid[required], ng-valid[appMobile], .ng-valid.required  {
+//   border-left: 5px solid #42A948; /* green */
+// }
+// .ng-invalid:not(form)  {
+//   border-left: 5px solid #a94442; /* red */
+// }
+
+.ui-select-container > .ui-select-search{
+  border-radius: 20px;
+}
+
+.search-input>input::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #b2bce6;
+}
+.search-input>input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #b2bce6;
+  opacity:  1;
+}
+.search-input>input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #b2bce6;
+  opacity:  1;
+}
+.search-input>input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #b2bce6;
+}
+
+
+.form-control:focus {
+  border-color: #0036fc;
+}
+
+.btn[disabled]{
+  background-color: #cccccc;
+}

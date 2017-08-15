@@ -1,0 +1,9 @@
+<div class="calert">
+    <!--<alert type="{{alert.type}}" *ngFor="let alert of alerts" dismissible="true">
+        {{alert.msg}}
+    </alert>-->
+    <div [hidden]="alert.isClose===true" class="alert alert-{{alert.type}} alert-dismissible" role="alert" *ngFor="let alert of alerts">
+        <button (click)="close(alert)" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{alert.msg}}
+    </div>
+</div>

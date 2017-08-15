@@ -1,0 +1,162 @@
+.beforelogin{
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  .breadcrumb{
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 360px;
+    right: 0px;
+    top: 5px;
+    li{
+      a{
+        font-size: 15px;
+        color: #000e3f;
+        cursor: pointer;
+      }
+      img{
+        position: relative;
+        width: 20px;
+        margin-right: 10px;
+        top: -2px
+      }
+    }
+    .dropdown{
+      ul{
+        li{
+          width: 100%;
+          position: relative;
+          a{
+            font-size: 13px;
+            &:hover{
+              color: #FFFFFF;
+              background-color: #0036FC;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.alone {
+  margin-right: 60px;
+}
+
+.loginModal{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background-color: rgba(0,0,0,0.7);
+  .modal-dialog{
+    position: relative;
+    top: 100px;
+    background-color: #FFFFFF;
+    width: 435px;
+    height: 560px;
+    border-radius: 12px;
+    .modal-content{
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border-style: none;
+    }
+    .modal-header{
+      img{
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .title{
+        width: 100%;
+        font-size: 18px;
+        color: #000e3f;
+        text-align: center;
+        margin: 40px 0px;
+        font-weight: bold;
+      }
+    }
+    .modal-body{
+      box-shadow: none;
+      label{
+        position: relative;
+        bottom: 15px;
+      }
+      input{
+        width: 300px;
+        height: 40px;
+        border-radius: 20px;
+        display: block;
+        border-width: 1px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        font-size: 14px;
+      }
+      .agree{
+        width: 300px;
+        label{
+          cursor: pointer;
+          font-weight: normal;
+          color: #676f8b;
+          &:hover{
+            color: #000e3f;
+            font-size: 16px;
+          }
+        }
+        .code{
+          position: relative;
+          display: inline-block;
+          height: 40px;
+          width: 100px;
+          margin-left: 20px;
+          background-color: #888888;
+          line-height: 40px;
+          float: right;
+          cursor: pointer;
+          img{
+            width: 100px;
+          }
+        }
+      }
+      .forget{
+        width: 300px;
+        text-align: right;
+        font-size: 13px;
+        color: #676f8b;
+      }
+    }
+    .modal-footer{
+      .btn-login{
+        position: relative;
+        top: 50px;
+        width: 320px;
+        height: 40px;
+        font-size: 14px;
+        background-color: #0003bf;
+        border-radius: 20px;
+        color: #FFFFFF;
+        &:hover{
+          background-color: #e7edff;
+          color: #676f8b;
+        }
+      }
+      .btn-reg{
+        @extend .btn-login;
+        top: -20px;
+      }
+      .regnew{
+        position: relative;
+        top: 80px;
+        width: 320px;
+        text-align: center;
+        font-size: 13px;
+        color: #0003bf;
+      }
+      .reg-login{
+        @extend .regnew;
+        top: 0px;
+      }
+    }
+  }
+}

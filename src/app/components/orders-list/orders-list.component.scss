@@ -1,0 +1,58 @@
+@import "../../../constants";
+.container{
+  width: 90%;
+  left: 200px;
+.title{
+  font-size: 18px;
+  color: #000e3f;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.oper{
+  position: relative;
+  left: 200px;
+  input{
+    width: 155px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    font-size: 13px;
+  }
+}
+.datepicker{
+  position: absolute;
+  top: 160px;
+  width: 60%;
+  right: 100px;
+  z-index: 1;
+  .start{
+    right: 350px;
+  }
+  .end{
+    right: 170px;
+  }
+}
+
+.orderlist{
+  position: relative;
+  margin-top: 40px;
+  .download{
+    text-align: right;
+    left: 40px;
+  }
+  img{
+    width: 20px;
+    margin: 0px 10px;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+  .money{
+    text-align: center;
+  }
+}
+}

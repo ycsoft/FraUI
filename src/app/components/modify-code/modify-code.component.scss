@@ -1,0 +1,33 @@
+@import "../../../constants";
+
+.title{
+  font-size: 18px;
+  color: #000e3f;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+input[type=text]{
+  width: 380px;
+  height: 40px;
+  margin: 5px 0px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 15px;
+}
+
+.col-md-1 {
+  margin: 15px 0px;
+}
+
+button{
+  margin-top: 60px;
+  float: left;
+}
+.row{
+  .tips{
+    font-size: 13px;
+    color: #676f8b;
+  }
+}

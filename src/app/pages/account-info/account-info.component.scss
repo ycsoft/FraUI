@@ -1,0 +1,11 @@
+@import "../../../constants";
+
+.right_content{
+  position: absolute;
+  padding-top: 50px;
+  top: 45px;
+  bottom: 0px;
+  left: 50px;
+  right: 0px;
+  overflow: scroll;
+}

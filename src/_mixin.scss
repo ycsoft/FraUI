@@ -1,0 +1,9 @@
+@mixin content {
+    font-seze: $ft-content;
+    color: #666666;
+}
+
+@mixin tip {
+    font-seze: $ft-tip;
+    color: #999999;
+}
