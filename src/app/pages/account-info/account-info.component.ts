@@ -6,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-info.component.scss']
 })
 export class AccountInfoComponent implements OnInit {
-  show_info = false;
-  show_modify = false;
-  show_orders_complete = false;
-  show_invoice = false;
-  show_invoice_info = true;
+
+  display = [false, false, false, false, false, false, false, true];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  myMenuClick(id) {
+    const len = this.display.length;
+    for (let i = 0 ; i < len; i++) {
+      this.display[i] = false;
+    }
+    this.display[id] = true;
   }
 
 }
