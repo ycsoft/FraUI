@@ -9,9 +9,6 @@
 
 .container{
   position: relative;
-  width: 80%;
-  height: 100%;
-  left: 100px;
   .row{
     position: relative;
   }
@@ -38,7 +35,10 @@ button{
 }
 .basic{
   margin-top: 40px;
-  background-color: #b3b7c6;
+  background-color: #f8f9fc;
+  border-color: #b3b7c6;
+  border-width: 1px;
+  border-style: solid;
   height: 150px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

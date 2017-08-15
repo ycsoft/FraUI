@@ -4,18 +4,16 @@
   font-size: 18px;
   color: #000e3f;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .container{
   position: relative;
-  width: 80%;
-  height: 100%;
-  left: 140px;
   .row{
     position: relative;
   }
   .basic{
+    position: relative;
     border-bottom-style: solid;
     border-radius: 1px;
     border-width: 1px;
@@ -32,15 +30,47 @@
     font-size: 13px;
     color: #676f8b;
   }
+  img{
+    width: 20px;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
 }
 
 .panel-body{
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
+  border-color: #b3b7c6;
   margin: 10px 10px;
-  height: 100px;
-  img{
-    width: 60px;
+  height: 120px;
+
+  &:hover{
+    border-color: #0036fc;
   }
+  .add{
+    position: relative;
+    width: 60px;
+    top: 10px;
+  }
+  .user{
+    margin: 4px 0px;
+  }
+}
+.addnew{
+  position: relative;
+  border-style: dashed;
+  border-width: 1px;
+  text-align: center;
+  line-height: 40px;
+}
+.container-fluid{
+  position: relative;
+  margin: 40px 0px;
+}
+.oper{
+  position: relative;
+  top: 30px;
 }

@@ -9,10 +9,37 @@
   <div class="container-fluid row">
     <div class="panel-body col-md-3" *ngFor="let i of info_list">
       <h1 style="text-align: center">XXXX有限公司</h1>
-      <div class="bottom"><app-radio>设为默认</app-radio></div>
+      <div class="row oper">
+        <div class="col-md-8"><app-radio>设为默认</app-radio></div>
+        <div class="col-md-2"><img src="../../../assets/images/btn_edit.svg"></div>
+        <div class="col-md-2"><img src="../../../assets/images/btn_delete.svg"> </div>
+      </div>
     </div>
-    <div class="panel-body col-md-3">
-      <img src="../../../assets/images/icon_add.svg">
+    <div class="panel-body col-md-1 addnew">
+      <img class="add" src="../../../assets/images/icon_add.svg">
+    </div>
+  </div>
+  <div class="row basic">
+    <div class="col-md-1">邮寄地址</div>
+    <div class="col-md-2 tips">(接收邮寄发票的地址)</div>
+  </div>
+  <div class="container-fluid row">
+    <div class="panel-body col-md-3" *ngFor="let i of info_list">
+      <div class="row user">
+        <div class="col-md-3">姓名</div>
+        <div class="col-md-3">17317935135</div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">上海市浦东新区XXX科技有限公司</div>
+      </div>
+      <div class="row oper">
+        <div class="col-md-8"><app-radio>设为默认</app-radio></div>
+        <div class="col-md-2"><img src="../../../assets/images/btn_edit.svg"></div>
+        <div class="col-md-2"><img src="../../../assets/images/btn_delete.svg"> </div>
+      </div>
+    </div>
+    <div class="panel-body col-md-1 addnew">
+        <img class="add" src="../../../assets/images/icon_add.svg">
     </div>
   </div>
 </div>
