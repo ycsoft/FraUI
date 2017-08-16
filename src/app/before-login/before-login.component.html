@@ -1,4 +1,4 @@
-<div class="beforelogin">
+<div class="beforelogin" xmlns:http="http://www.w3.org/1999/xhtml">
 <ol class="breadcrumb">
   <li role="presentation" class="dropdown alone"><img src="../../assets/images/icon_help_dark.svg">
     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">帮助</a>
@@ -8,7 +8,7 @@
     </ul>
   </li>
   <li *ngIf="!isLogin">
-    <a data-toggle="modal" data-target="#loginModal" href="#" (click)="onLogin()">登录</a>
+    <a data-toggle="modal" data-target="#loginModal" href="#" >登录</a>
   </li>
   <li *ngIf="!isLogin"><a data-toggle="modal" data-target="#regModal" href="#">注册</a></li>
   <li *ngIf="isLogin" role="presentation" class="dropdown">
@@ -30,12 +30,21 @@
         <div class="center-block title">会员登录</div>
       </div>
       <div class="modal-body">
-        <input class="center-block" type="text" placeholder="账号">
-        <input class="center-block" type="password" placeholder="密码">
+        <input class="center-block" type="text" placeholder="账号" [(ngModel)]="userInfo.user_id">
+        <input class="center-block" type="password" placeholder="密码" [(ngModel)]="userInfo.pwd">
+        <div class="center-block agree">
+          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码" [(ngModel)]="userInfo.vcode">
+          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
+            <img   id="vcode"   >
+
+
+          </div>
+        </div>
         <div class="forget center-block">忘记密码</div>
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
+        <button  (click)="onLogin()" type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
         <div class="center-block regnew">新用户注册</div>
       </div>
     </div>
@@ -57,7 +66,7 @@
         <div class="center-block agree">
           <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码">
           <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
-            <img id="vcode" src="http://10.200.187.131:7001/vcode">
+            <img   id="vcode2"   >
           </div>
         </div>
         <div class="center-block agree"><input type="checkbox" style="width: 20px; display: inline-block; margin-right: 10px">
@@ -66,7 +75,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-reg center-block" data-dismiss="modal">注册</button>
-        <div class="center-block reg-login">登录</div>
+        <div class="center-block reg-login"  (click)="onLogin()" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">登录</div>
       </div>
     </div>
   </div>
