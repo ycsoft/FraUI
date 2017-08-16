@@ -9,6 +9,19 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<script type="text/javascript">
+  function getCookie(name)
+  {
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+      return decodeURIComponent(arr[2]);
+    else
+      return null;
+  }
+  var sessionid= getCookie('PYCKET_ID');
+  if (sessionid ==null)
+    document.cookie="PYCKET_ID="+Math.random().toString(36).substr(2)+Math.random().toString(36).substr(2)+";expires=3600";
+</script>
   <app-root></app-root>
 </body>
 </html>
