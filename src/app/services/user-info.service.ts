@@ -2,16 +2,13 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UserInfoService {
-  public isLogin = false;
-  public userName = '';
-  public password = '';
+  public user_id: string;
+  public isLogin: boolean;
+  public pwd: string;
+  public vcode: string;
+  public sessionid: string;
 
-  constructor(
-    //isLogin:boolean, userName:string, password:string
-  ) {
-    //this.userName = userName;
-    //this.isLogin = isLogin;
-    //this.password = password;
+  constructor() {
   }
 
 

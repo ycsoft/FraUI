@@ -7,12 +7,12 @@
       <li class="center-block"><a href="#">客服电话</a></li>
     </ul>
   </li>
-  <li *ngIf="!isLogin">
+  <li *ngIf="!userInfo.isLogin">
     <a data-toggle="modal" data-target="#loginModal" href="#" >登录</a>
   </li>
-  <li *ngIf="!isLogin"><a data-toggle="modal" data-target="#regModal" href="#">注册</a></li>
-  <li *ngIf="isLogin" role="presentation" class="dropdown">
-    <a id="baseinfo" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名</a>
+  <li *ngIf="!userInfo.isLogin"><a data-toggle="modal" data-target="#regModal" href="#">注册</a></li>
+  <li *ngIf="userInfo.isLogin" role="presentation" class="dropdown">
+    <a id="baseinfo" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.user_id}}</a>
     <ul class="dropdown-menu" aria-labelledby="baseinfo">
       <li class="center-block"><a href="#">基本资料</a></li>
       <li class="center-block"><a href="#">发票管理</a></li>
@@ -36,8 +36,6 @@
           <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码" [(ngModel)]="userInfo.vcode">
           <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
             <img   id="vcode"   >
-
-
           </div>
         </div>
         <div class="forget center-block">忘记密码</div>
