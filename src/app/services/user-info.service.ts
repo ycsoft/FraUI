@@ -11,6 +11,7 @@ export class UserInfoService {
   constructor() {
   }
 
+  public setItem(key: string, value) {
 
-
+  }
 }

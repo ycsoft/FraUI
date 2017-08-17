@@ -7,15 +7,17 @@
       <li class="center-block"><a href="#">客服电话</a></li>
     </ul>
   </li>
-  <li *ngIf="!userInfo.isLogin">
-    <a data-toggle="modal" data-target="#loginModal" href="#" >登录</a>
+  <li *ngIf="!userInfo.isLogin"><a data-toggle="modal" data-target="#loginModal" href="#" >登录</a>
   </li>
   <li *ngIf="!userInfo.isLogin"><a data-toggle="modal" data-target="#regModal" href="#">注册</a></li>
   <li *ngIf="userInfo.isLogin" role="presentation" class="dropdown">
     <a id="baseinfo" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.user_id}}</a>
     <ul class="dropdown-menu" aria-labelledby="baseinfo">
-      <li class="center-block"><a href="#">基本资料</a></li>
-      <li class="center-block"><a href="#">发票管理</a></li>
+      <li class="center-block"><a href="/info/0">基本资料</a></li>
+      <li class="center-block"><a href="/info/3">订单报告</a></li>
+      <li class="center-block"><a href="/info/6">发票管理</a></li>
+      <li class="center-block"><a href="/info/7">账号管理</a></li>
+      <li class="center-block"><a href="/" (click)="logOut()">注销</a></li>
     </ul>
   </li>
 </ol>

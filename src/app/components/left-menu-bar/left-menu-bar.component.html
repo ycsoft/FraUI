@@ -13,7 +13,7 @@
     <div class="col-md-2"></div><img src="../../assets/images/icon_wallet.svg" class="col-md-3"><div class="col-md-6">账户余额</div>
     </div>
     <div class="money center-block">
-      ￥8500
+      ￥{{money_left}}
     </div>
     <button class="btn btn-blue center-block">充值</button>
   </div>
@@ -24,8 +24,8 @@
         基本资料
       </li>
       <ul [collapse] = "basic_info" class="list-group">
-        <div class="list-group-item" (click)="subMenuClick(0)" >基本信息</div>
-        <div class="list-group-item" (click)="subMenuClick(1)">修改密码</div>
+        <li class="list-group-item" (click)="subMenuClick(0)" >基本信息</li>
+        <li class="list-group-item" (click)="subMenuClick(1)">修改密码</li>
       </ul>
       <!----->
       <li class="list-group-item" (click)="order_report_click()">
@@ -51,10 +51,10 @@
         <img src="../../assets/images/icon_sidemenu_account.svg">
         账户管理
       </li>
-      <div [collapse] = "account_mana" class="list-group">
-        <div class="list-group-item"  (click)="subMenuClick(7)">充值</div>
-        <div class="list-group-item"  (click)="subMenuClick(8)">充值记录</div>
-      </div>
+      <ul [collapse] = "account_mana" class="list-group">
+        <li class="list-group-item"  (click)="subMenuClick(7)">充值</li>
+        <li class="list-group-item"  (click)="subMenuClick(8)">充值记录</li>
+      </ul>
     </ul>
   </div>
   <div class="exit center-block">

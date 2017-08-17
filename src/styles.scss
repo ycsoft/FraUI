@@ -161,3 +161,13 @@ body::-webkit-scrollbar-thumb, .content::-webkit-scrollbar-thumb, .result-contai
 .btn[disabled]{
   background-color: #cccccc;
 }
+
+.breadcrumb {
+  > li {
+    display: inline-block;
+
+    + li:before {
+      content: "";
+    }
+  }
+}

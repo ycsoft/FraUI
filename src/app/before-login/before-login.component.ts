@@ -8,22 +8,30 @@ import { Result } from '../beans/result';
 import md5 from 'js-md5';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { environment } from '../../environments/environment';
+import { SessionStorageService } from '../services/session-storage.service';
+import {LoginUtilsModule} from '../module/login-utils/login-utils.module';
 @Component({
   selector: 'app-before-login',
   templateUrl: './before-login.component.html',
   styleUrls: ['./before-login.component.scss'],
-  providers: [UserInfoService]
 })
 export class BeforeLoginComponent implements OnInit {
   //
-  // 注入UserInfoService
+  // 注入SessionStorageService
   //
-  constructor(public userInfo: UserInfoService, private http: Http) { }
+  constructor(
+    public userInfo: UserInfoService,
+    private http: Http,
+    private sessionStorage: SessionStorageService,
+    private login_utils: LoginUtilsModule) { }
 
   ngOnInit() {
-
     this.userInfo.sessionid = this.getCookie('PYCKET_ID');
+    this.sessionStorage.setItem('sessionid', this.userInfo.sessionid);
     this.getCode();
+    this.userInfo.isLogin = this.sessionStorage.getItem('isLogin');
+    this.userInfo.user_id = this.sessionStorage.getItem('user');
+    this.userInfo.pwd = this.sessionStorage.getItem('pwd');
   }
   //
   // 读取COOKIE
@@ -42,23 +50,27 @@ export class BeforeLoginComponent implements OnInit {
   // 登录
   //
   onLogin() {
-
-    let params = {}
+    let params = {};
     params = this.userInfo;
     params['pwd'] = md5(this.userInfo.pwd);
     params['sessionid'] = this.userInfo.sessionid;
-
     const options = new RequestOptions({  params:  params, method: RequestMethod.Get});
     console.log(options);
     const url = environment.apiserver + ':8002/login/t/t';
 
     this.http.get(url, options).toPromise().then(
       (response) => {
-      const result: Result = response.json()
+      const result = response.json()
       console.log(response.json());
       if (result.code === 0 ) {
           console.log('login success!');
           this.userInfo.isLogin = true;
+        this.sessionStorage.setItem('user', this.userInfo.user_id);
+        this.sessionStorage.setItem('pwd', this.userInfo.pwd);
+        this.sessionStorage.setItem('isLogin', true);
+        this.sessionStorage.setItem('token', result.token);
+      } else {
+        alert(result.msg);
       }
     });
   }
@@ -70,5 +82,11 @@ export class BeforeLoginComponent implements OnInit {
     const srctag = environment.apiserver + ':7001/vcode?' + 'sessionid=' + this.userInfo.sessionid + '&r=' + Math.random();
     document.getElementById('vcode').setAttribute('src', srctag );
     document.getElementById('vcode2').setAttribute('src', srctag );
+  }
+  //
+  // 注销登录
+  //
+  logOut() {
+    this.login_utils.logOut();
   }
 }
