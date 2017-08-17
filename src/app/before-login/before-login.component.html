@@ -58,21 +58,21 @@
         <div class="center-block title">会员注册</div>
       </div>
       <div class="modal-body">
-        <input class="center-block" type="text" placeholder="请输入用户名">
-        <input class="center-block" type="password" placeholder="请输入密码">
-        <input class="center-block" type="password" placeholder="请输入您的邮箱">
+        <input class="center-block" type="text" placeholder="请输入用户名" [(ngModel)]="userInfo.user_id">
+        <input class="center-block" type="password" placeholder="请输入密码" [(ngModel)]="userInfo.pwd">
+        <input class="center-block" type="text" placeholder="请输入您的邮箱" [(ngModel)]="userInfo.user_email">
         <div class="center-block agree">
-          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码">
+          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码" [(ngModel)]="userInfo.vcode">
           <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
             <img   id="vcode2"   >
           </div>
         </div>
-        <div class="center-block agree"><input type="checkbox" style="width: 20px; display: inline-block; margin-right: 10px">
+        <div class="center-block agree"><input type="checkbox" id="check_reg" style="width: 20px; display: inline-block; margin-right: 10px" [(ngModel)]="check_reg">
           <label>我已阅读并接受协议</label>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-reg center-block" data-dismiss="modal">注册</button>
+        <button type="button" class="btn btn-reg center-block" data-dismiss="modal" (click)="onReg()">注册</button>
         <div class="center-block reg-login"  (click)="onLogin()" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">登录</div>
       </div>
     </div>

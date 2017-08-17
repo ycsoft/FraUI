@@ -3,4 +3,5 @@ export class UserInfo {
   public isLogin: boolean;
   public pwd: string;
   public vcode: string;
+  public user_email: string;
 }

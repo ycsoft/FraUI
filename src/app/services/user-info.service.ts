@@ -7,6 +7,8 @@ export class UserInfoService {
   public pwd: string;
   public vcode: string;
   public sessionid: string;
+  public user_email: string;
+  public token: string;
 
   constructor() {
   }
