@@ -1,0 +1,25 @@
+.loading{
+    position: fixed;
+    vertical-align: middle;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    text-align: center;transition: 1s;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.backdrop{
+    z-index: 9;
+    background-color: white;
+    opacity: 0.6;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}

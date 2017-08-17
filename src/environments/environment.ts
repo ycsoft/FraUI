@@ -7,5 +7,6 @@ export const environment = {
     production: false,
     server1: 'http://www.fraplus.cn',
     mianPage: 'http://www.fraplus.cn',
-    apiserver: 'http://10.200.187.201'
+    // apiserver: 'http://10.200.187.201'
+    apiserver: 'http://127.0.0.1'
 };

@@ -94,12 +94,28 @@
         content: "";
       }
     }
+    .dropdown{
+      height: 50px;
+      ul {
+        li{
+          a{
+            color: #000;
+            &:hover{
+              background-color: #0036fc;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
   }
   .headerright{
-    position: relative;
-    top: 10px;
-    left: 140px;
+    position: absolute;
     text-align: right;
+    left: 70%;
+    width: auto;
+    height: 50px;
+    line-height: 40px;
     background-color: #0036fc;
     a{
       color: #FFFFFF;

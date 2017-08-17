@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Utils } from 'app/services/utils';
+import { Utils } from '../../app/services/utils';
 
 @Injectable()
 export class SessionStorageService {
 
-    types = {
+  types = {
         OBJECT: 'OBJECT',
         NUMBER: 'NUMBER',
         STRING: 'STRING',
         OTHER: 'OTHER'
     };
-
-    constructor() { }
+  constructor() {
+  }
 
     public setItem(key: string, value) {
         if (Utils.isNotEmpty(key)) {
@@ -26,14 +26,14 @@ export class SessionStorageService {
                 obj.type = this.types.OTHER;
             }
 
-            sessionStorage.setItem(key, JSON.stringify(obj));
+            localStorage.setItem(key, JSON.stringify(obj));
         }
     }
 
     public getItem(key: string) {
         let value;
         try {
-            const obj = JSON.parse(sessionStorage.getItem(key));
+            const obj = JSON.parse(localStorage.getItem(key));
             if (obj === this.types.NUMBER) {
                 value = parseInt(obj.value, 10);
             } else {
@@ -52,5 +52,4 @@ export class SessionStorageService {
     public clear() {
         sessionStorage.clear();
     }
-
 }

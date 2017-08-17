@@ -24,6 +24,7 @@ import { DataService } from '../app/services/data.service';
 import { SmallTypeColorService } from '../app/services/small-type-color.service';
 import { SessionStorageService } from '../app/services/session-storage.service';
 import { ChartDataService } from '../app/services/chart-data.service';
+import { UserInfoService } from '../app/services/user-info.service';
 
 import { RmbPipe } from '../app/pipes/rmb.pipe';
 
@@ -38,6 +39,8 @@ import { InvoiceListComponent } from '../app/components/invoice-list/invoice-lis
 import { InvoiceInfoComponent } from '../app/components/invoice-info/invoice-info.component';
 import { ChargeComponent } from '../app/components/charge/charge.component';
 import { ChargeListComponent } from '../app/components/charge-list/charge-list.component';
+import { LoadingComponent } from '../app/components/loading/loading.component';
+import { LoginUtilsModule } from '../app/module/login-utils/login-utils.module';
 //
 // 配置路由
 //
@@ -64,7 +67,7 @@ const appRoutes: Routes = [
     component: TitleBarComponent
   },
   {
-    path: 'info',
+    path: 'info/:id',
     component: AccountInfoComponent
   }
 ];
@@ -90,7 +93,8 @@ const appRoutes: Routes = [
     InvoiceListComponent,
     InvoiceInfoComponent,
     ChargeComponent,
-    ChargeListComponent
+    ChargeListComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -101,14 +105,16 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     TooltipModule.forRoot(),
     CollapseModule.forRoot(),
-    DatepickerModule.forRoot()
+    DatepickerModule.forRoot(),
+    LoginUtilsModule
   ],
   providers: [
     AlertService,
     SessionStorageService,
     ChartDataService,
     DataService,
-    SmallTypeColorService
+    SmallTypeColorService,
+    UserInfoService
   ],
   bootstrap: [AppComponent]
 })

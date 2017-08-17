@@ -90,3 +90,11 @@
   top: 85%;
   width: 300px;
 }
+ul{
+  li{
+    &:hover{
+      background-color: #0036fc;
+      color: #FFFFFF;
+    }
+  }
+}
