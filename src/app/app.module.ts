@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ResourceModule } from 'ngx-resource';
 import { TooltipModule, CollapseModule, DatepickerModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BeforeLoginComponent } from '../app/before-login/before-login.component';
@@ -41,6 +42,8 @@ import { ChargeComponent } from '../app/components/charge/charge.component';
 import { ChargeListComponent } from '../app/components/charge-list/charge-list.component';
 import { LoadingComponent } from '../app/components/loading/loading.component';
 import { LoginUtilsModule } from '../app/module/login-utils/login-utils.module';
+import { ResetPasswordComponent } from '../app/pages/reset-password/reset-password.component';
+import { LoginRegComponent } from '../app/components/login-reg/login-reg.component';
 //
 // 配置路由
 //
@@ -69,6 +72,14 @@ const appRoutes: Routes = [
   {
     path: 'info/:id',
     component: AccountInfoComponent
+  },
+  {
+    path: 'reset',
+    component: ResetPasswordComponent
+  },
+  {
+    path: 'login',
+    component: LoginRegComponent
   }
 ];
 @NgModule({
@@ -94,7 +105,9 @@ const appRoutes: Routes = [
     InvoiceInfoComponent,
     ChargeComponent,
     ChargeListComponent,
-    LoadingComponent
+    LoadingComponent,
+    ResetPasswordComponent,
+    LoginRegComponent
   ],
   imports: [
     BrowserModule,
@@ -106,6 +119,7 @@ const appRoutes: Routes = [
     TooltipModule.forRoot(),
     CollapseModule.forRoot(),
     DatepickerModule.forRoot(),
+    ModalModule.forRoot(),
     LoginUtilsModule
   ],
   providers: [

@@ -1,16 +1,14 @@
-<app-title-bar></app-title-bar>
-<app-left-menu-bar (menuClick)="myMenuClick($event)"></app-left-menu-bar>
-<div class="right_content">
+<app-title-bar (OnSearch)="search($event)"></app-title-bar>
+<app-left-menu-bar (menuClick)="myMenuClick($event)" (notifyMoney)="getMoney($event)"></app-left-menu-bar>
+<div class="right_content scroll">
   <app-basic-info [hidden] = "!display[0]"></app-basic-info>
   <app-modify-code [hidden]="!display[1]"></app-modify-code>
-  <app-orders-list [hidden]="!display[2]"></app-orders-list>
-  <app-orders-list [hidden]="!display[3]"></app-orders-list>
-  <app-orders-list [hidden]="!display[4]"></app-orders-list>
+  <app-orders-list [hidden]="!display[2]" [title]= "title_done"></app-orders-list>
+  <app-orders-list [hidden]="!display[3]" [title]= "title_topay"></app-orders-list>
+  <app-orders-list [hidden]="!display[4]" [title]= "title_tocheck"></app-orders-list>
   <app-invoice-list [hidden]="!display[5]"></app-invoice-list>
   <app-invoice-info [hidden]="!display[6]"></app-invoice-info>
   <app-charge [hidden]="!display[7]"></app-charge>
   <app-charge-list [hidden]="!display[8]"></app-charge-list>
-  <router-outlet></router-outlet>
-  <app-loading></app-loading>
 </div>
 

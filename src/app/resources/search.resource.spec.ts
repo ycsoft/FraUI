@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { SearchResource } from 'app/resources/search.resource';
+import { SearchResource } from '../../app/resources/search.resource';
 
 describe('SearchService', () => {
   beforeEach(() => {

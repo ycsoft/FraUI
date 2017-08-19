@@ -17,13 +17,13 @@
     </div>
     <button class="btn btn-blue center-block">充值</button>
   </div>
-  <div class="menu">
+  <div class="menu scroll">
     <ul class="list-group">
       <li class="list-group-item" (click)="basic_click()">
        <img src="../../assets/images/icon_account_basicinfo_blue.svg">
         基本资料
       </li>
-      <ul [collapse] = "basic_info" class="list-group">
+      <ul [collapse] = "basic_info" class="list-group submenu">
         <li class="list-group-item" (click)="subMenuClick(0)" >基本信息</li>
         <li class="list-group-item" (click)="subMenuClick(1)">修改密码</li>
       </ul>
@@ -32,7 +32,7 @@
         <img src="../../assets/images/icon_sidemenu_report.svg">
         订单报告
       </li>
-      <ul [collapse] = "order_report" class="list-group">
+      <ul [collapse] = "order_report" class="list-group submenu">
         <li class="list-group-item" (click)="subMenuClick(2)">已完成</li>
         <li class="list-group-item" (click)="subMenuClick(3)" >待支付</li>
         <li class="list-group-item" (click)="subMenuClick(4)">待审核</li>
@@ -42,7 +42,7 @@
         <img src="../../assets/images/icon_sidemenu_invoice.svg">
         发票管理
       </li>
-      <ul [collapse] = "invoice_mana" class="list-group">
+      <ul [collapse] = "invoice_mana" class="list-group submenu">
         <li class="list-group-item" (click)="subMenuClick(5)">开票管理</li>
         <li class="list-group-item" (click)="subMenuClick(6)">发票信息管理</li>
       </ul>
@@ -51,7 +51,7 @@
         <img src="../../assets/images/icon_sidemenu_account.svg">
         账户管理
       </li>
-      <ul [collapse] = "account_mana" class="list-group">
+      <ul [collapse] = "account_mana" class="list-group submenu">
         <li class="list-group-item"  (click)="subMenuClick(7)">充值</li>
         <li class="list-group-item"  (click)="subMenuClick(8)">充值记录</li>
       </ul>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { ChartBean } from 'app/beans/chart-bean';
+import { ChartBean } from '../../app/beans/chart-bean';
 
 @Injectable()
 export class DataService {

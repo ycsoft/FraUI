@@ -84,6 +84,9 @@ export class OrderComponent implements OnInit {
             this.user = this.sessionStorageService.getItem('user');
             this.token = this.sessionStorageService.getItem('token');
             this.money = this.sessionStorageService.getItem('money');
+            console.log('=======================get freesmall from order:');
+            console.log(this.sessionStorageService.getItem('freesmall'));
+            this.order.freesmall = (this.sessionStorageService.getItem('freesmall'));
 
             this.order.order_no = Guid.newGuid();
             this.order.keywords = this.keywords;
@@ -139,7 +142,6 @@ export class OrderComponent implements OnInit {
     private getChartOption(categories, nodes, lines) {
         return {
             // tooltip: {},
-
             animationDurationUpdate: 1500,
             animationEasingUpdate: 'quinticInOut',
             series: [
@@ -174,7 +176,13 @@ export class OrderComponent implements OnInit {
     }
 
     submitOrder() {
+        const islogin = this.sessionStorageService.getItem('isLogin');
+        if (!islogin) {
+          alert('请登录');
+          return;
+        }
         if (this.orderForm.invalid) {
+          console.log('this.orderForm.invalid');
             if (this.orderForm['controls'].email.invalid) {
                 if (Utils.isEmpty(this.order.email)) {
                     this.order.errors.email = true;
@@ -198,24 +206,22 @@ export class OrderComponent implements OnInit {
         //
         // 将用户会话信息写入表单，进行提交
         //
+        console.log('this.orderForm next send');
         this.order.user = this.user;
         this.order.token = this.token;
         this.order.money = this.money;
 
-        const newTab = window.open('about:blank');
+      const newTab = window.open('about:blank');
+      console.log('请求发送');
         this.orderResource.postOrder(this.order, (result: Result) => {
             console.log('请求已发送');
             console.log(result);
 
             newTab.location.href = result.data['url'];
             console.log(result.data['money']);
-
+            console.log(result.data['money']);
             this.money = result['money'];
             this.sessionStorageService.setItem('money', result['money']);
-            // location.href = result.data;
-            // newTab.location.href = result.data;
-            // window.open(result.data, '_blank');
-            // console.log('url:', result.data);
         });
     }
 

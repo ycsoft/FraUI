@@ -17,69 +17,19 @@
     <ol class="breadcrumb headerright">
       <li role="presentation"><img src="../../../assets/images/icon_about.svg"><a href="#" style="margin-right: 60px">关于分维</a></li>
       <li role="presentation"><img src="../../../assets/images/icon_help.svg"><a href="#" style="margin-right: 80px">帮助</a></li>
-      <li *ngIf="!userInfo.isLogin" role="presentation"><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
-      <li *ngIf="!userInfo.isLogin" role="presentation"><a href="" style="margin: 0px 10px">|</a></li>
-      <li *ngIf="!userInfo.isLogin" role="presentation"><a href="#" data-toggle="modal" data-target="#regModal">注册</a></li>
+      <li *ngIf="!userInfo.isLogin" id="login" role="presentation"><a (click)="getCode()" data-toggle="modal" data-target="#loginModal1">登录</a></li>
+      <li *ngIf="!userInfo.isLogin" id="reg" role="presentation"><a href="" style="margin: 0px 10px">|</a></li>
+      <li *ngIf="!userInfo.isLogin" role="presentation"><a (click)="getCode()" data-toggle="modal" data-target="#regModal1">注册</a></li>
       <li *ngIf="userInfo.isLogin" role="presentation" class="dropdown"><a id="baseinfo" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.user_id}}</a>
         <ul class="dropdown-menu" aria-labelledby="baseinfo">
-          <li class="center-block"><a href="/info/0">基本资料</a></li>
-          <li class="center-block"><a href="/info/3">订单报告</a></li>
-          <li class="center-block"><a href="/info/6">发票管理</a></li>
-          <li class="center-block"><a href="/info/7">账号管理</a></li>
-          <li class="center-block"><a href="/info/5">注销</a></li>
+          <li class="center-block"><a (click)="basic_info()">基本资料</a></li>
+          <li class="center-block"><a (click)="order_click()">订单报告</a></li>
+          <li class="center-block"><a (click)="invoice_click()">发票管理</a></li>
+          <li class="center-block"><a (click)="charge_click()">账号管理</a></li>
+          <li class="center-block"><a (click)="logOut()">注销</a></li>
         </ul>
       </li>
     </ol>
   </div>
 </div>
-
-<!-- 登录 -->
-<div class="modal fade loginModal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <img class="center-block" src="../../assets/images/logo.svg">
-        <div class="center-block title">会员登录</div>
-      </div>
-      <div class="modal-body">
-        <input class="center-block" type="text" placeholder="账号">
-        <input class="center-block" type="password" placeholder="密码">
-        <div class="forget center-block">忘记密码</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
-        <div class="center-block regnew">新用户注册</div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 注册 -->
-<div class="modal fade loginModal" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <img class="center-block" src="../../assets/images/logo.svg">
-        <div class="center-block title">会员注册</div>
-      </div>
-      <div class="modal-body">
-        <input class="center-block" type="text" placeholder="请输入用户名">
-        <input class="center-block" type="password" placeholder="请输入密码">
-        <input class="center-block" type="password" placeholder="请输入您的邮箱">
-        <div class="center-block agree">
-          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码">
-          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
-            <img id="vcode" src="">
-          </div>
-        </div>
-        <div class="center-block agree"><input type="checkbox" style="width: 20px; display: inline-block; margin-right: 10px">
-          <label>我已阅读并接受协议</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-reg center-block" data-dismiss="modal">注册</button>
-        <div class="center-block reg-login">登录</div>
-      </div>
-    </div>
-  </div>
+<app-login-reg (OnLogin)="onLogin()"></app-login-reg>

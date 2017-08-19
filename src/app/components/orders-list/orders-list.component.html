@@ -1,11 +1,12 @@
+
 <div class="container">
   <div class="row">
-    <div class="col-md-3 title">已完成订单</div>
+    <div class="col-md-3 title">{{title}}</div>
   </div>
   <div class="row oper">
     <div class="col-md-1"><app-check>全选</app-check></div>
-    <div class="col-md-2"><input [(ngModel)]="dt_start" type="text" placeholder="起始日期" (click)="start_click()"></div>
-    <div class="col-md-2"><input [(ngModel)]="dt_end" type="text" placeholder="截止日期" (click)="end_select()"></div>
+    <div class="col-md-2"><input type="text" class="form-control" id="date1" readonly  [(ngModel)]="dt_start"  placeholder="起始日期"  ></div>
+    <div class="col-md-2"><input type="text" class="form-control" id="date2" readonly  [(ngModel)]="dt_end"  placeholder="起始日期"  ></div>
     <div class="col-md-2"><button class="btn btn-blue">筛选</button></div>
     <div class="col-md-1"><button class="btn btn-blue" style="position: relative;">下载报告</button></div>
   </div>

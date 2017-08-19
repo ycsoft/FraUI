@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlertService } from '../../../app/services/alert.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { AlertService } from '../../../app/services/alert.service';
 })
 export class LoadingComponent implements OnInit {
 
-    isShow = false;
+    @Input() isShow = false;
     constructor(private alertService: AlertService) { }
 
     ngOnInit() {

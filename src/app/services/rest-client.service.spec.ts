@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { RestClient } from 'app/services/rest-client.service';
+import { RestClient } from '../../app/services/rest-client.service';
 
 describe('RestClientService', () => {
   beforeEach(() => {

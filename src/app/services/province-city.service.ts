@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataResource } from 'app/resources/data.resource';
-import { Province } from 'app/beans/province';
+import { DataResource } from '../../app/resources/data.resource';
+import { Province } from '../../app/beans/province';
 
 @Injectable()
 export class ProvinceCityService {

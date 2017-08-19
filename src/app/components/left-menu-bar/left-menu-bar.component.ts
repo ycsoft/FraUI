@@ -18,9 +18,9 @@ export class LeftMenuBarComponent implements OnInit {
 
   @Input()  menuId = -1;
   @Output() menuClick = new EventEmitter();
+  @Output() notifyMoney = new EventEmitter();
   constructor( private sessionStorage: SessionStorageService, private http: Http) { }
   ngOnInit() {
-    console.log('获取用户信息');
     const params = {};
     params['method'] = 'isel_account';
     params['token'] = this.sessionStorage.getItem('token');
@@ -34,6 +34,7 @@ export class LeftMenuBarComponent implements OnInit {
         const result = response.json()
         const data = result.data[0];
         this.money_left = data.money;
+        this.notifyMoney.emit(this.money_left);
         this.sessionStorage.setItem('money', this.money_left);
         if (result.code === 0 ) {
         } else {

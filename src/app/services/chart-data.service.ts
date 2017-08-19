@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ChartBean } from 'app/beans/chart-bean';
-import { Strategy } from 'app/beans/strategy';
-import { SmallTypeColorService } from 'app/services/small-type-color.service';
+import { ChartBean } from '../../app/beans/chart-bean';
+import { Strategy } from '../../app/beans/strategy';
+import { SmallTypeColorService } from '../../app/services/small-type-color.service';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Injectable()
 export class ChartDataService {
@@ -172,21 +173,23 @@ export class ChartDataService {
             this.setContent(array, small);
         });
         const freeNode = this.getFreeNode(array, ratio);
-        freeNode.symbolSize = 5;
-        smallNodes.push(freeNode);
+        // freeNode.symbolSize = 5;
+        freeNode.forEach( node => {
+          node.symbolSize = 5;
+          smallNodes.push(node);
+        });
         smallNodes.forEach((element) => {
             element.id = ++index;
         });
         chartData.lines = this.getLines(freeNode, smallNodes);
         chartData.nodes = smallNodes;
-        console.log('chartData', chartData);
         return chartData;
     }
 
     public getSmall(array: ChartBean[], ratio = 1, isSelected) {
         const nodes = [];
         array.forEach(chartBean => {
-            const smallObj = this.isExist(nodes, chartBean.small);
+          const smallObj = this.isExist(nodes, chartBean.small);
             if (smallObj === undefined) {
                 chartBean.checked = isSelected;
                 const node = this.toNode(chartBean);
@@ -204,10 +207,14 @@ export class ChartDataService {
         contents.forEach((chartBean) => {
             if (chartBean.free) {
                 small.hasFree = true;
+                small.discountPrice = 0;
             } else {
-                small.discountPrice += chartBean.price;
+                // small.discountPrice = chartBean.price;
+                small.discountPrice = chartBean.price;
             }
-            small.totalPrice += chartBean.price;
+
+            small.totalPrice = chartBean.price;
+            small.size = chartBean.size;
             contentList.push(chartBean);
         });
         small.contentList = contentList;
@@ -215,8 +222,10 @@ export class ChartDataService {
 
     public getLines(free, smallList) {
         const lines = [];
-        const small = smallList.find(element => element.chartBean.small === free.chartBean.small);
-        lines.push({
+
+        const small = smallList.find(element => element.chartBean.small === free[0].chartBean.small);
+         /*
+         lines.push({
             source: small.id,
             target: free.id,
             lineStyle: {
@@ -225,15 +234,33 @@ export class ChartDataService {
                 }
             }
         });
+        */
+
+          free.forEach(item => {
+            lines.push({
+              source: small.id,
+              target: item.id,
+              lineStyle: {
+                normal: {
+                  width: 3
+                }
+              }
+            });
+        });
         return lines;
     }
 
     public getFreeNode(array: ChartBean[], ratio) {
-        const free = array.find((element) => element.free);
-        const freeNode = this.toNode(free, ratio);
-        freeNode.name = free.content;
-        console.log('freeNode', freeNode);
-        return freeNode;
+      const frees = [];
+      const free = array.find((element) => element.free);
+      const freeNode = this.toNode(free, ratio);
+      freeNode.name = free.content;
+      array.forEach( item => {
+        if (item.free) {
+          frees.push(this.toNode(item, ratio));
+        }
+      });
+      return frees;
     }
 
     private toNode(chartBean, ratio = 1) {

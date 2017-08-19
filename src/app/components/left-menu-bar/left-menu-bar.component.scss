@@ -68,6 +68,7 @@
   max-height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
+  // 滚动条样式
 }
 
 .list-group-item{
@@ -96,5 +97,15 @@ ul{
       background-color: #0036fc;
       color: #FFFFFF;
     }
+  }
+}
+.submenu{
+  // background-color: #fc7c72;
+  position: relative;
+  top: 5px;
+  .list-group-item{
+    height: auto;
+    text-align: left;
+    margin-left: 130px;
   }
 }

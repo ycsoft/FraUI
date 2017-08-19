@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ResourceParams, Resource, ResourceAction, ResourceMethod } from 'ngx-resource';
+import { ResourceParams, Resource, ResourceAction  } from 'ngx-resource';
+import {ResourceMethod} from 'ngx-resource/src/Interfaces';
 import { Result } from '../../app/beans/result';
 import { RestClient } from '../../app/services/rest-client.service';
 import { environment } from '../../environments/environment';
@@ -11,7 +12,7 @@ import { environment } from '../../environments/environment';
 export class SearchResource extends RestClient {
 
   @ResourceAction({
-    path: '/?keywords={!keywords}'
+    path: '/?keywords={!keywords}&user={!user}&token={!token}'
   })
-  search: ResourceMethod<{ keywords: any }, Result>;
+  search: ResourceMethod<{ keywords: any, user: any, token: any }, Result>;
 }

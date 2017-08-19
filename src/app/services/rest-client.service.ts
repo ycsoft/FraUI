@@ -3,10 +3,10 @@ import { Resource, ResourceActionBase } from 'ngx-resource';
 import { Http, Request, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
-import { environment } from 'environments/environment';
-import { Result } from 'app/beans/result';
-import { AlertService } from 'app/services/alert.service';
-import { AlertType } from 'app/beans/alert-type.enum';
+import { environment } from '../../environments/environment';
+import { Result } from '../../app/beans/result';
+import { AlertService } from '../../app/services/alert.service';
+import { AlertType } from '../../app/beans/alert-type.enum';
 
 @Injectable()
 export class RestClient extends Resource {

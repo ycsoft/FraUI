@@ -1,9 +1,11 @@
 <div class="container" *ngIf="pay_type === payType.PAY_REMAIN || pay_type === payType.PAY_REMIT">
   <div class="remain" *ngIf="pay_type === payType.PAY_REMAIN">
     <div class="arrow"></div>
-    <div>账户余额:<label class="control-label">￥2300</label></div>
-    <div class="not-enough">账户余额不足，无法支付！<span>请充值后继续支付或选择其他支付方式</span></div>
-    <button class="btn btn-blue">充值</button>
+    <div class="money_left">账户余额:<label class="control-label">￥{{money_left}}</label></div>
+    <div>
+    <div *ngIf="money_left < total_money" class="not-enough">账户余额不足，无法支付！<span>请充值后继续支付或选择其他支付方式</span></div>
+    <button class="btn btn-blue" (click)="charge()">充值</button>
+    </div>
   </div>
   <div class="remit" *ngIf="pay_type === payType.PAY_REMIT">
     <div class="arrow2"></div>

@@ -19,6 +19,7 @@ export class Order {
     total_amount = 0;
     keywords = '';
     errors = <any>{};
+    freesmall = '';
 
     // 添加用户会话信息
     user = '';

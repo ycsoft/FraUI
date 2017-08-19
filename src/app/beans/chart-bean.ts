@@ -1,4 +1,4 @@
-import { Strategy } from './strategy';
+import { Strategy } from '../../app/beans/strategy';
 
 export class ChartBean {
   public rule_id: string;
@@ -7,9 +7,10 @@ export class ChartBean {
   public free: boolean;
   public content: string;
   public price: number;
-  public strategylist: Array<any> = [];
+  // public strategylist: Array<any> = [];
   public checked: boolean;
   public name: string;
   public contentSize: number;
   public size: number;
+  public likely: number;
 }

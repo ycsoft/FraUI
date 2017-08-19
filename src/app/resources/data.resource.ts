@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { RestClient } from 'app/services/rest-client.service';
-import { ResourceAction, ResourceMethod, ResourceParams } from 'ngx-resource';
+import { RestClient } from '../../app/services/rest-client.service';
+import { ResourceAction,  ResourceParams } from 'ngx-resource';
+import {ResourceMethod} from 'ngx-resource/src/Interfaces';
 import { RequestMethod } from '@angular/http';
-import { Province } from 'app/beans/province';
+import { Province } from '../../app/beans/province';
 
 @Injectable()
 @ResourceParams({

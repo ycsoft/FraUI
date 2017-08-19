@@ -9,30 +9,30 @@
   //  display: inline-flex;
   //  position: relative;
   //  height: 100%;
-    .logo{
+  .logo{
+    position: relative;
+    min-width: 100px;
+    // background-color: #6b9bfc;
+    margin-right: 10px;
+    img{
       position: relative;
-      min-width: 100px;
-      // background-color: #6b9bfc;
-      margin-right: 10px;
-      img{
-        position: relative;
-        width: 30px;
-        cursor: pointer;
-        top: 7px;
-        &:hover{
-          transform: scale(1.2);
-        }
+      width: 30px;
+      cursor: pointer;
+      top: 7px;
+      &:hover{
+        transform: scale(1.2);
       }
     }
-    .menu_fold{
-      position: relative;
-      @extend .logo;
-      img{
-        top: 15px;
-        width: 22px;
-        height: 22px;
-      }
+  }
+  .menu_fold{
+    position: relative;
+    @extend .logo;
+    img{
+      top: 15px;
+      width: 22px;
+      height: 22px;
     }
+  }
   //}
   span{
     position: absolute;
@@ -148,7 +148,7 @@
     top: 100px;
     background-color: #FFFFFF;
     width: 435px;
-    height: 560px;
+    height: 600px;
     border-radius: 12px;
     .modal-content{
       -webkit-box-shadow: none;
