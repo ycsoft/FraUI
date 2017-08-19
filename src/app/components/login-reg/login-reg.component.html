@@ -1,0 +1,58 @@
+<!-- 登录 -->
+<div class="modal fade loginModal" data-backdrop="static" id="loginModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员登录</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="账号" [(ngModel)]="userInfo.user_id">
+        <input class="center-block" type="password" placeholder="密码" [(ngModel)]="userInfo.pwd">
+        <div class="center-block agree">
+          <input type="text" style="width: 160px; display: inline-block;" placeholder="请输入校验码" [(ngModel)]="userInfo.vcode">
+          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
+            <img   id="vcode">
+          </div>
+        </div>
+        <div class="forget center-block">忘记密码</div>
+      </div>
+
+      <div class="modal-footer">
+        <button  (click)="onLogin()" type="button" class="btn btn-login center-block" data-dismiss="modal">登录</button>
+        <div class="center-block regnew">新用户注册</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 注册 -->
+<div class="modal fade loginModal" id="regModal1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img class="center-block" src="../../assets/images/logo.svg">
+        <div class="center-block title">会员注册</div>
+      </div>
+      <div class="modal-body">
+        <input class="center-block" type="text" placeholder="请输入用户名" [(ngModel)]="regInfo.user_id">
+        <input class="center-block" type="password" placeholder="请输入密码" [(ngModel)]="regInfo.pwd">
+        <input class="center-block" type="text" placeholder="请输入您的邮箱" [(ngModel)]="regInfo.email">
+        <div class="center-block agree">
+          <input type="password" style="width: 160px; display: inline-block;" placeholder="请输入校验码" [(ngModel)]="regInfo.vcode">
+          <div (click)="getCode()" class="code" data-toggle="tooltip" title="点击图片更新验证码">
+            <img   id="vcode2"   >
+          </div>
+        </div>
+        <div class="center-block agree"><input type="checkbox" id="check_reg" style="width: 20px; display: inline-block; margin-right: 10px" [(ngModel)]="check_reg">
+          <label>我已阅读并接受协议</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-reg center-block" data-dismiss="modal" (click)="onReg()">注册</button>
+        <div class="center-block reg-login"  (click)="onLogin()" data-toggle="modal" data-target="#loginModal1" data-dismiss="modal">登录</div>
+      </div>
+    </div>
+  </div>
+</div>
